@@ -3,8 +3,14 @@ package org.brohede.marcus.listviewapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,13 +19,36 @@ public class MainActivity extends AppCompatActivity {
     private int[] mountainHeights ={4478,4808,6190};
     // Create ArrayLists from the raw data above and use these lists when populating your ListView.
 
-
+    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        Log.d("TEST", "Hello World");
+        listView=(ListView) findViewById(R.id.listview);
+
+        ArrayList <String> arrayList= new ArrayList<String>(Arrays.asList(mountainNames));
+
+
+
+
+
+        /*arrayList.add("Matterhorn");
+        arrayList.add("Mont Blanc");
+        arrayList.add("Denali");
+        arrayList.add("mountainLocations");
+        arrayList.add("mountainHeights");*/
+
+        ArrayAdapter arrayAdapter=new ArrayAdapter (this, android.R.layout.simple_list_item_1, arrayList);
+
+        listView.setAdapter(arrayAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "Height: " + mountainHeights[position], Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
 
         // The onCreate method is run when the app is created.
         // Before you can implement this you need to create the layout xml files that
