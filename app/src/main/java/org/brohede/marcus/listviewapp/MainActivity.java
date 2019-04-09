@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "Height: " + mountainHeights[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Height: " + mountainHeights[position] + "\nLocation: " + mountainLocations[position], Toast.LENGTH_SHORT).show();
             }
 
         });
