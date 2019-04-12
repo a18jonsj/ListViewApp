@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add("mountainLocations");
         arrayList.add("mountainHeights");*/
 
-        ArrayAdapter arrayAdapter=new ArrayAdapter (this, android.R.layout.simple_list_item_1, arrayList);
+        ArrayAdapter arrayAdapter=new ArrayAdapter (this, R.layout.list_item_textview,R.id.list_item_textview, arrayList);
 
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
