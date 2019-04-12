@@ -2,8 +2,20 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:id="@+id/list_item_textview"
-    android:textSize="40sp"
-    android:paddingLeft="20dp"
+
+    android:textSize="25sp"
+
+    android:paddingBottom="20dp"
+
+    android:textStyle="italic"
+
+    android:height="80dp"
+
+    android:paddingLeft="10dp"
+
+    android:paddingTop="20dp"
+
+
 
     >
 
